@@ -78,25 +78,10 @@ public class LetterBlock {
         this.character = character;
     }
 
-    /**
-     * @return the character in the letter box
-     */
-    public char getCharacter() {
-        return character;
-    }
-
     public void showBox() {
         System.out.print(CSI + (row + 1) + ";" + (column + 1) + "H"); // move the cursor to (row, column)
         System.out.print(CSI + "37;" + color.getColorCode() + "m"); // set foreground color to white and background
                                                                     // color to color.getColorCode()
         System.out.print(character);
-    }
-
-    public static String combineLetters(LetterBlock[] letters) {
-        String res = "";
-        for (LetterBlock letterBlock : letters) {
-            res += letterBlock.character;
-        }
-        return res;
     }
 }
