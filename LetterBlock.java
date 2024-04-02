@@ -23,6 +23,19 @@ public class LetterBlock {
         public int getColorCode() {
             return colorCode;
         }
+
+        public static BoxColor getBoxColor(char color) {
+            switch (color) {
+                case 'G':
+                    return BoxColor.GREEN;
+                case 'Y':
+                    return BoxColor.YELLOW;
+                case 'R':
+                    return BoxColor.GRAY;
+                default:
+                    return null;
+            }
+        }
     }
 
     /**
@@ -37,7 +50,8 @@ public class LetterBlock {
     }
 
     /**
-     * Initializes the terminal screen. Call this method before using the <code>LetterBlock</code> class.
+     * Initializes the terminal screen. Call this method before using the
+     * <code>LetterBlock</code> class.
      */
     public static void initLetterBlocks() {
         System.out.print(CSI + "2J"); // clear screen
@@ -66,7 +80,8 @@ public class LetterBlock {
 
     public void showBox() {
         System.out.print(CSI + (row + 1) + ";" + (column + 1) + "H"); // move the cursor to (row, column)
-        System.out.print(CSI + "37;" + color.getColorCode() + "m"); // set foreground color to white and background color to color.getColorCode()
+        System.out.print(CSI + "37;" + color.getColorCode() + "m"); // set foreground color to white and background
+                                                                    // color to color.getColorCode()
         System.out.print(character);
     }
 }
