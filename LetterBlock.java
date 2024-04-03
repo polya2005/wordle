@@ -55,8 +55,8 @@ public class LetterBlock {
      */
     public static void initLetterBlocks() {
         System.out.print(CSI + "2J"); // clear screen
+        System.out.print(CSI + "1;1H"); // move the cursor to the top left corner
         System.out.print(CSI + "0m"); // clear formatting
-        System.out.print(CSI + "97m"); // set foreground color to white
     }
 
     /**
@@ -83,5 +83,6 @@ public class LetterBlock {
         System.out.print(CSI + "37;" + color.getColorCode() + "m"); // set foreground color to white and background
                                                                     // color to color.getColorCode()
         System.out.print(character);
+        System.out.print(CSI + "0m"); // clear formatting
     }
 }
