@@ -73,7 +73,7 @@ public class Wordle {
             }
         }
         System.out.print(CSI + "8H"); // move cursor to row 8
-        System.out.println("The word is " + actualWord + ".");
+        System.out.println("The word is " + actualWord + "."); // reveal the word
     }
 
     /**
@@ -99,7 +99,7 @@ public class Wordle {
         for (int i = 0; i < 5; i++) {
             StringBuffer tempResult = new StringBuffer(result);
             StringBuffer tempActual = new StringBuffer(actual);
-            // Use the grey position to find yellow position and replace it.
+            // Use the gray position to find yellow position and replace it.
             if (result.charAt(i) == 'R') {
                 for (int j = 0; j < 5; j++) {
                     if (guess.charAt(i) == actual.charAt(j) && result.charAt(j) != 'G') {
